@@ -129,4 +129,7 @@ object Gnomenclator:
 
 
 @main def hello(args: String*): Unit =
-  println(Gnomenclator.randomWord(args.toList).run)
+  println("Gnomic word generated:")
+  println(args.toList.map { w =>
+    Gnomenclator.randomWord(List(w.split("\\.") :_*)).run
+  }.mkString(" "))
